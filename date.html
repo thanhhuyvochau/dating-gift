@@ -7,15 +7,28 @@
     <link rel="stylesheet" href="css/date.css" />
   </head>
   <body>
-    <h1 title="choose a date">Are you free on ...</h1>
-    <form class="form-group">
-      <label>Which day: (select a date)</label>
+    <h1 title="choose a date">Em rảnh ngày...</h1>
+    <form id="date-form" class="form-group">
+      <label for="datetime">Ngày: (chọn 1 ngày thôi nha)</label>
       <div>
-        <input type="date" />
-        <button class="button" type="submit" formaction="food.html">
-          Submit
+        <input id="datetime" type="datetime-local" />
+        <button class="button" type="button" onclick="onSubmit()">
+          Nộp cho anh Huy
         </button>
       </div>
     </form>
+    <script>
+      function onSubmit() {
+        // Get the input element
+        let dateInputEl = document.getElementById("datetime");
+
+        // Check if a date is selected
+        if (dateInputEl.value) {
+          console.log("Ngày đã chọn:", dateInputEl.value);
+        } else {
+          alert("Chọn ngày đi rồi hãy nộp nghe chưaa!");
+        }
+      }
+    </script>
   </body>
 </html>
